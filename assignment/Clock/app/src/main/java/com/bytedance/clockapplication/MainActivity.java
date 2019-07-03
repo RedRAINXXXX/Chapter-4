@@ -6,10 +6,16 @@ import android.view.View;
 
 import com.bytedance.clockapplication.widget.Clock;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     private View mRootView;
     private Clock mClockView;
+
+    public Clock getClock(){
+        return this.mClockView;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 mClockView.setShowAnalog(!mClockView.isShowAnalog());
             }
         });
+        mClockView.start(this);
 
     }
 }
